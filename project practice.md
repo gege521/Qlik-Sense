@@ -36,7 +36,7 @@
     from [lib://name.qvd](qvd);     
 
 
-### Report Logic for Viz
+### 2.Report Logic for Viz
   -**compute growth rate**：  
   `SUM({$<year={$(=MAX(year))}>}distributorsti_count)/SUM({$<year={$(=MAX(year)-1)}>}distributorsti_count)-1`
 
