@@ -33,7 +33,7 @@
   load p_event_date, lps_did ,device_model,app_channel,app_version,province,city,town,app_key,    
   if(isnull(range),'other',range)as range,    
   if(isnull(category),'other',category)as category       
-  from [lib://name.qvd](qvd);```      
+  from [lib://name.qvd](qvd);     
 
 
 ### 报表逻辑 
