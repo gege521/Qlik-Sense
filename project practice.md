@@ -76,7 +76,7 @@
   - **auto show recent 2 years title**
   `if(GetSelectedCount(fy_quarter)>0,Sum({<fy_quarter={"$(vLastfy_quarter)"}>}sellin_sum) ,Sum({<year_fis={"$(vLast2Year_fis)"}>}sellin_sum)) `
   - **variable in report**
-  ![Vairable](C:\Users\zhangge2\Desktop\variable.png)
+  ![Vairable](/variable.png)
   
 
 
