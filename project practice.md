@@ -1,15 +1,15 @@
 ### 1.Data Loading
 - 增量加载+变量+qvd使用   
 
--  链接ODBC数据库`LIB CONNECT TO 'ODBC Connection';` 
+  - 链接ODBC数据库`LIB CONNECT TO 'ODBC Connection';` 
 
--  设置变量
+  -  设置变量
   `let startday = date(Today()-31,'YYYY-MM-DD');  
   let midday1 =  date(Today()-20,'YYYY-MM-DD');  
   let midday2 =  date(Today()-10,'YYYY-MM-DD');  
   trace(startday);`
 
--  Demo   
+  -  Demo   
   ```temp:
   sql 
   SELECT p_event_date,lps_did ,device_model,app_channel,app_version,province,city,town,app_key,t2.range,t2.category  
