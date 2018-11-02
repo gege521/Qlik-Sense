@@ -4,9 +4,9 @@
   - 链接ODBC数据库`LIB CONNECT TO 'ODBC Connection';`
 
   -  设置变量
-  `let startday = date(Today()-31,'YYYY-MM-DD');  
-  let midday1 =  date(Today()-20,'YYYY-MM-DD');  
-  let midday2 =  date(Today()-10,'YYYY-MM-DD');  
+  `let startday = date(Today()-31,'YYYY-MM-DD');   
+  let midday1 =  date(Today()-20,'YYYY-MM-DD');   
+  let midday2 =  date(Today()-10,'YYYY-MM-DD');   
   trace(startday);`
 
   -  Demo   
