@@ -1,15 +1,15 @@
 ### 1.Data Loading
-- 增量加载+变量+qvd使用   
+- Incremental Loading+Variable+QVD file   
 
-  - 链接ODBC数据库`LIB CONNECT TO 'ODBC Connection';`
+  - Connect ODBC `LIB CONNECT TO 'ODBC Connection';`
 
-  -  设置变量
+  -  Set Varible
   `let startday = date(Today()-31,'YYYY-MM-DD');   
   let midday1 =  date(Today()-20,'YYYY-MM-DD');   
   let midday2 =  date(Today()-10,'YYYY-MM-DD');   
   trace(startday);`
 
-  -  Demo   
+  -  Data Loading Demo   
   ```temp:
     sql 
     SELECT p_event_date,lps_did ,device_model,app_channel,app_version,province,city,town,app_key,t2.range,t2.category  
@@ -36,8 +36,8 @@
     from [lib://name.qvd](qvd);     
 
 
-### 报表逻辑 
-- **计算环比**：  
+### Report Logic for Viz
+- **Compute Growth Rate**：  
   `SUM({$<year={$(=MAX(year))}>}distributorsti_count)/SUM({$<year={$(=MAX(year)-1)}>}distributorsti_count)-1`
 
 
