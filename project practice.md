@@ -1,13 +1,13 @@
 ### 1.Data Loading
 - 增量加载+变量+qvd使用   
 
-  - 链接ODBC数据库```LIB CONNECT TO 'ODBC Connection';`
+  - 链接ODBC数据库`LIB CONNECT TO 'ODBC Connection';`
 
   -  设置变量
-  ```let startday = date(Today()-31,'YYYY-MM-DD');  
+  `let startday = date(Today()-31,'YYYY-MM-DD');  
   let midday1 =  date(Today()-20,'YYYY-MM-DD');  
   let midday2 =  date(Today()-10,'YYYY-MM-DD');  
-  trace(startday);
+  trace(startday);`
 
   -  Demo   
   ```temp:
