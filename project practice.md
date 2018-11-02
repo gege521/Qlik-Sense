@@ -37,7 +37,7 @@
 
 
 ### 2.Report Logic for Viz
-  -**compute growth rate**：  
+  - **compute growth rate**：  
   `SUM({$<year={$(=MAX(year))}>}distributorsti_count)/SUM({$<year={$(=MAX(year)-1)}>}distributorsti_count)-1`
 
   - **showlast day data**   
@@ -65,12 +65,19 @@
   `Sum({<brand={' Desktop',' Notebook'}>}sdrev)
   /Sum({<brand={' Desktop',' Notebook'}>}ca)`
 
+  - **stacked barchart with percentage**
+  `Sum(sdrev)/sum(total <quarter> sdrev) --quater is x value(dimension)`
 
+  - **null and '' value: use len is more reliable**
+   `if(len(family_le)>1,family_le)`
 
-
-
-
-
+  - **auto show top 5 with any filter**
+  `if(Match(rank(sum(sdrev)),'1','2','3','4','5')>0,1-Sum(pcacost)/sum(sdrev))`
+  - **auto show recent 2 years title**
+  `if(GetSelectedCount(fy_quarter)>0,Sum({<fy_quarter={"$(vLastfy_quarter)"}>}sellin_sum) ,Sum({<year_fis={"$(vLast2Year_fis)"}>}sellin_sum)) `
+  - **variable in report**
+  ![Vairable](C:\Users\zhangge2\Desktop\variable.png)
+  
 
 
 
