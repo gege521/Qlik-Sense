@@ -80,8 +80,8 @@
    * variable in report
   ![Vairable](/variable.png)
   
-   * avoild distinct between citys    
-   'sum(aggr( Count(distinct {<chan_year={'$(vMaxYear_chan)'},chan_month={'$(vMaxYear_Month_chan)'},distr_channel={'41'}>}zsold_to),chan_city))'
+   * avoid distinct between cities   
+   `sum(aggr( Count(distinct {<chan_year={'$(vMaxYear_chan)'},chan_month={'$(vMaxYear_Month_chan)'},distr_channel={'41'}>}zsold_to),chan_city))`
   
 
 
