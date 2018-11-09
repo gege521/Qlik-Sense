@@ -76,10 +76,11 @@
   `if(Match(rank(sum(sdrev)),'1','2','3','4','5')>0,1-Sum(pcacost)/sum(sdrev))`
    * set auto title   
   `if(GetSelectedCount(fy_quarter)>0,Sum({<fy_quarter={"$(vLastfy_quarter)"}>}sellin_sum) ,Sum({<year_fis={"$(vLast2Year_fis)"}>}sellin_sum)) `
-   * variable in report   
-  ![Vairable](/variable.png)
-  
+    
    * avoid distinct between cities     
    `sum(aggr( Count(distinct {<chan_year={'$(vMaxYear_chan)'},chan_month={'$(vMaxYear_Month_chan)'},distr_channel={'41'}>}zsold_to),chan_city))`
   
 
+#### helpful links:
+[qlik help](https://help.qlik.com/zh-CN/sense/November2017/Subsystems/Hub/Content/Hub/hub.htm)
+[qlik community](https://community.qlik.com/welcome)
