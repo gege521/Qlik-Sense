@@ -1,15 +1,15 @@
 ### 1.Data Loading
 - **Incremental Loading+Variable+QVD file**  
 
-  step1: Connect ODBC `LIB CONNECT TO 'ODBC Connection;`
+  **step1**: Connect ODBC `LIB CONNECT TO 'ODBC Connection;`
 
-  step2:  Set Varible
+  **step2**:  Set Varible
   `let startday = date(Today()-31,'YYYY-MM-DD');   
   let midday1 =  date(Today()-20,'YYYY-MM-DD');   
   let midday2 =  date(Today()-10,'YYYY-MM-DD');   
   trace(startday);`
 
-  step3:  Data Loading SQL (demo)   
+  **step3**:  Data Loading SQL (demo)   
 ```temp:
 sql 
 SELECT p_event_date,lps_did ,device_model,app_channel,app_version,province,city,town,app_key,t2.range,t2.category  
@@ -35,9 +35,8 @@ if(isnull(range),'other',range)as range,
 if(isnull(category),'other',category)as category       
 from [lib://name.qvd](qvd);     
 
-----------------------------------------------------------------------------------------------------------------------------------------
 
-### 2.Report Logic for Viz
+### 2.Report Logic for Viz   
    * compute growth rate：  
   `SUM({$<year={$(=MAX(year))}>}distributorsti_count)/SUM({$<year={$(=MAX(year)-1)}>}distributorsti_count)-1`
   
@@ -83,9 +82,4 @@ from [lib://name.qvd](qvd);
    * avoid distinct between cities   
    `sum(aggr( Count(distinct {<chan_year={'$(vMaxYear_chan)'},chan_month={'$(vMaxYear_Month_chan)'},distr_channel={'41'}>}zsold_to),chan_city))`
   
-
-
-
-
-
 
