@@ -41,14 +41,14 @@
   `SUM({$<year={$(=MAX(year))}>}distributorsti_count)/SUM({$<year={$(=MAX(year)-1)}>}distributorsti_count)-1`
   
 
-   * showlast day data   
+   * show last day    
   `count(distinct if(p_event_date = max(total p_event_date),lps_did))`
   
    * cumulative computation  
     `Rangesum(above(sum({<type = {'0','1'},[report_qlik_base_data.region]={'1'}>}[report_qlik_base_data.regNum]),0,RowNo()))+
   Rangesum(above(sum({<type = {'1','3','4'},[report_qlik_base_data.region]={'2'}>}[report_qlik_base_data.regNum]),0,RowNo()))`
 
-   * color Set  
+   * color set  
   `if(max($(dur2))=30,rgb(16, 78 ,120),   
   if(max($(dur2))=60,rgb(0, 139 ,139),  
   if(max($(dur2))<=90,rgb(135 ,206 ,255),  
@@ -59,7 +59,7 @@
    * default show last day value and make filter auto   
   `if(GetSelectedCount(p_event_date)>1,count(distinct lps_did),count(distinct if(p_event_date= max(total p_event_date),lps_did)))`
 
-   * 30 day use camera times  
+   * use camera times 1 month
   `class(aggr(count(param1_value_id)/(today()-min(p_event_date))*30,lps_did_id),2)`
 
    * sumif 
