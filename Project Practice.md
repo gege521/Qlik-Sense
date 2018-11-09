@@ -10,30 +10,30 @@
   trace(startday);`
 
   **step3**:  Data Loading SQL (demo)   
-```temp:
-sql 
-SELECT p_event_date,lps_did ,device_model,app_channel,app_version,province,city,town,app_key,t2.range,t2.category  
-from  d_pc_ace.ods_accessible_device_dau_list t1   
-LEFT JOIN d_pc_ace.ace_software_device_model t2   
-on t1.device_model = t2.series   
-where p_event_date >= '$(startday)'   
-and p_event_date< '$(midday1)'   
-and app_key in ('1','2','3');  
-temp:  
-Concatenate    
-sql   
-SELECT p_event_date,lps_did,device_model,app_channel,app_version,province,city,town,app_key,t2.range,t2.category   
-from  d_pc_ace.ods_accessible_device_dau_list t1      
-LEFT JOIN d_pc_ace.ace_software_device_model t2     
-on t1.device_model = t2.series   
-where p_event_date >= '$(midday1)'    
-and p_event_date< '$(midday2)'   
-and app_key in ('1','2','3');  
-STORE temp INTO [lib://name.qvd](qvd);   
-load p_event_date, lps_did ,device_model,app_channel,app_version,province,city,town,app_key,    
-if(isnull(range),'other',range)as range,    
-if(isnull(category),'other',category)as category       
-from [lib://name.qvd](qvd);     
+  ```temp:
+  sql 
+  SELECT p_event_date,lps_did ,device_model,app_channel,app_version,province,city,town,app_key,t2.range,t2.category  
+  from  d_pc_ace.ods_accessible_device_dau_list t1   
+  LEFT JOIN d_pc_ace.ace_software_device_model t2   
+  on t1.device_model = t2.series   
+  where p_event_date >= '$(startday)'   
+  and p_event_date< '$(midday1)'   
+  and app_key in ('1','2','3');  
+  temp:  
+  Concatenate    
+  sql   
+  SELECT p_event_date,lps_did,device_model,app_channel,app_version,province,city,town,app_key,t2.range,t2.category   
+  from  d_pc_ace.ods_accessible_device_dau_list t1      
+  LEFT JOIN d_pc_ace.ace_software_device_model t2     
+  on t1.device_model = t2.series   
+  where p_event_date >= '$(midday1)'    
+  and p_event_date< '$(midday2)'   
+  and app_key in ('1','2','3');  
+  STORE temp INTO [lib://name.qvd](qvd);   
+  load p_event_date, lps_did ,device_model,app_channel,app_version,province,city,town,app_key,    
+  if(isnull(range),'other',range)as range,    
+  if(isnull(category),'other',category)as category       
+  from [lib://name.qvd](qvd);     
 
 
 ### 2.Report Logic for Viz   
