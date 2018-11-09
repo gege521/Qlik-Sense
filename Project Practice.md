@@ -1,15 +1,15 @@
 ### 1.Data Loading
 - **Incremental Loading+Variable+QVD file**  
 
-  1 Connect ODBC `LIB CONNECT TO 'ODBC Connection';`
+  step1: Connect ODBC `LIB CONNECT TO 'ODBC Connection';`
 
-  2  Set Varible
+  step2:  Set Varible
   `let startday = date(Today()-31,'YYYY-MM-DD');   
   let midday1 =  date(Today()-20,'YYYY-MM-DD');   
   let midday2 =  date(Today()-10,'YYYY-MM-DD');   
   trace(startday);`
 
-  3  Data Loading Demo   
+  Data Loading Demo   
   ```temp:
     sql 
     SELECT p_event_date,lps_did ,device_model,app_channel,app_version,province,city,town,app_key,t2.range,t2.category  
@@ -39,6 +39,7 @@
 ### 2.Report Logic for Viz
    * **compute growth rate**：  
   `SUM({$<year={$(=MAX(year))}>}distributorsti_count)/SUM({$<year={$(=MAX(year)-1)}>}distributorsti_count)-1`
+  
 
    * **showlast day data**   
   `count(distinct if(p_event_date = max(total p_event_date),lps_did))`
@@ -55,7 +56,7 @@
   if(max($(dur2))=150,rgb(34, 139, 34),  
   if(max($(dur2))>150,rgb(205, 96 ,144)))))))` 
 
-   * **default show last day value and select one day value**   
+   * **default show last day value and make filter auto**   
   `if(GetSelectedCount(p_event_date)>1,count(distinct lps_did),count(distinct if(p_event_date= max(total p_event_date),lps_did)))`
 
    * **30 day use camera times**   
@@ -73,10 +74,13 @@
 
    * **auto show top 5 with any filter**
   `if(Match(rank(sum(sdrev)),'1','2','3','4','5')>0,1-Sum(pcacost)/sum(sdrev))`
-   * **auto show recent 2 years title**
+   * **set auto title**
   `if(GetSelectedCount(fy_quarter)>0,Sum({<fy_quarter={"$(vLastfy_quarter)"}>}sellin_sum) ,Sum({<year_fis={"$(vLast2Year_fis)"}>}sellin_sum)) `
    * **variable in report**
   ![Vairable](/variable.png)
+  
+   * **avoild distinct between citys**
+   'sum(aggr( Count(distinct {<chan_year={'$(vMaxYear_chan)'},chan_month={'$(vMaxYear_Month_chan)'},distr_channel={'41'}>}zsold_to),chan_city))'
   
 
 
