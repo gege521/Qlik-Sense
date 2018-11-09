@@ -81,6 +81,6 @@
    `sum(aggr( Count(distinct {<chan_year={'$(vMaxYear_chan)'},chan_month={'$(vMaxYear_Month_chan)'},distr_channel={'41'}>}zsold_to),chan_city))`
   
 
-#### helpful links:
-qlik help:https://help.qlik.com/zh-CN/sense/November2017/Subsystems/Hub/Content/Hub/hub.html    
-qlik community:https://community.qlik.com/welcome
+### helpful links:
+####qlik help:https://help.qlik.com/zh-CN/sense/November2017/Subsystems/Hub/Content/Hub/hub.html    
+####qlik community:https://community.qlik.com/welcome
