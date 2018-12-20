@@ -82,5 +82,5 @@
   
 
 ### helpful links:
-####qlik help:https://help.qlik.com/zh-CN/sense/November2017/Subsystems/Hub/Content/Hub/hub.html    
-####qlik community:https://community.qlik.com/welcome
+#### qlik help:https://help.qlik.com/zh-CN/sense/November2017/Subsystems/Hub/Content/Hub/hub.html    
+#### qlik community:https://community.qlik.com/welcome
