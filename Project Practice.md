@@ -59,7 +59,7 @@
    * default show last day value and make filter auto     
   `if(GetSelectedCount(p_event_date)>1,count(distinct lps_did),count(distinct if(p_event_date= max(total p_event_date),lps_did)))`
 
-   * use camera times 1 month   
+   * use frequency during 30 days   
   `class(aggr(count(param1_value_id)/(today()-min(p_event_date))*30,lps_did_id),2)`
 
    * sumif   
