@@ -1,13 +1,13 @@
 ### 1.Data Loading
 - **Incremental Loading:Variable+QVD usage**  
 
-  **1**: Connect ODBC: `LIB CONNECT TO 'ODBC Connection;`
+  **1**: Connect ODBC: LIB CONNECT TO 'ODBC Connection;
 
   **2**:  Set Varible:    
-  ```let startday = date(Today()-31,'YYYY-MM-DD');    
+     let startday = date(Today()-31,'YYYY-MM-DD');    
      let midday1 =  date(Today()-20,'YYYY-MM-DD');    
      let midday2 =  date(Today()-10,'YYYY-MM-DD');      
-     trace(startday);```   
+     trace(startday); 
 
   **3**:  Data Loading SQL (demo)    
   
@@ -34,7 +34,7 @@
   load p_event_date, lps_did ,device_model,app_channel,app_version,province,city,town,app_key,    
   if(isnull(range),'other',range)as range,    
   if(isnull(category),'other',category)as category       
-  from [lib://name.qvd](qvd);   ```
+  from [lib://name.qvd](qvd);   
 
 
 ### 2.Report Logic for Viz    
