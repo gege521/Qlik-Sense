@@ -1,20 +1,20 @@
 ### 1.Data Loading
-- **Incremental Loading+Variable+QVD file**  
+- **Incremental Loading:Variable+QVD usage**  
 
-  **step1**: Connect ODBC `LIB CONNECT TO 'ODBC Connection;`
+  **1**: Connect ODBC: `LIB CONNECT TO 'ODBC Connection;`
 
-  **step2**:  Set Varible
-  `let startday = date(Today()-31,'YYYY-MM-DD');   
-  let midday1 =  date(Today()-20,'YYYY-MM-DD');   
-  let midday2 =  date(Today()-10,'YYYY-MM-DD');   
-  trace(startday);`
+  **2**:  Set Varible:
+  `let startday = date(Today()-31,'YYYY-MM-DD');   `
+  `let midday1 =  date(Today()-20,'YYYY-MM-DD');   `
+  `let midday2 =  date(Today()-10,'YYYY-MM-DD');   `
+  `trace(startday);`
 
   **step3**:  Data Loading SQL (demo)   
-  ```temp:
+  ```table name:
   sql 
   SELECT p_event_date,lps_did ,device_model,app_channel,app_version,province,city,town,app_key,t2.range,t2.category  
-  from  d_pc_ace.ods_accessible_device_dau_list t1   
-  LEFT JOIN d_pc_ace.ace_software_device_model t2   
+  from  ods_accessible_device_dau_list t1   
+  LEFT JOIN software_device_model t2   
   on t1.device_model = t2.series   
   where p_event_date >= '$(startday)'   
   and p_event_date< '$(midday1)'   
