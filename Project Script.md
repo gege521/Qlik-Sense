@@ -1,4 +1,4 @@
-### 1.Data Loading
+### 1.Back End: Data Loading
 - **Incremental Loading:Variable+QVD usage**  
 
   **1**: Connect ODBC: LIB CONNECT TO 'ODBC Connection;
@@ -37,7 +37,7 @@
   from [lib://name.qvd](qvd);   
 
 
-### 2.Report Logic for Viz    
+### 2.Front End: Logic for Viz    
    * compute growth rate：    
   `SUM({$<year={$(=MAX(year))}>}distributorsti_count)/SUM({$<year={$(=MAX(year)-1)}>}distributorsti_count)-1`   
   
