@@ -5,7 +5,7 @@
 ```
 section access;
 LOAD * inline [
-ACCESS, USERID,REDUCTION, OMIT    
+ACCESS, USERID,REDUCTION, OMIT    reduction:define which row to hide, omit:define which column to hide
 USER, AD_DOMAIN\ADMIN,,
 USER, AD_DOMAIN\A,1, 
 USER, AD_DOMAIN\B, 2,NUM
@@ -15,7 +15,7 @@ ADMIN, INTERNAL\SA_SCHEDULER,*,
 section application;
 ```
 
-which reduction:define which row to hide, omit:define which column to hide
+
 note: here we only hide measurement, not dimensions(the report will have visual problems if we omit dimension, details pls refer to qlik help website)
  
  
@@ -26,3 +26,4 @@ note: here we only hide measurement, not dimensions(the report will have visual 
 as the picture showed above, here we set _**show column if**_ measurement equals zero in the menu.
 
 Combined 1&2, we can get a user friendly report which could hide some rows&columns to speccific users.
+
