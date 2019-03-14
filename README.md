@@ -1,8 +1,1 @@
-# Qlik-Sense
-MOST FREQUENT SRCIPT USED IN SERVERAL PROJECT PERSONALLY.
-
-PROJECT LIST:
-##### - COMMERCIAL BUSSINESS INSIGHT   
-##### - LENOVO ACE PROJECT   
-
-
+#### Here list the some functions/scripts/reports adjustment skills I used frequently in work, help it can help you all.
