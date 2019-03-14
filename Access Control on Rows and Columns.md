@@ -5,7 +5,7 @@
 ```
 section access;
 LOAD * inline [
-ACCESS, USERID,REDUCTION, OMIT    reduction:define which row to hide, omit:define which column to hide
+ACCESS, USERID,REDUCTION, OMIT    #reduction:define which row to hide, omit:define which column to hide
 USER, AD_DOMAIN\ADMIN,,
 USER, AD_DOMAIN\A,1, 
 USER, AD_DOMAIN\B, 2,NUM
