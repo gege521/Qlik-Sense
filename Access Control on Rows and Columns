@@ -25,6 +25,5 @@ section application;
  which means the first step works but not very user friendly, and sometimes biz don't want users aware of there are autority 
  difference among them, so here is step2 adjustment on report level.
  
- 
-[[https://github.com/gege521/Qlik-Sense/blob/master/report.png]]
+![image](https://github.com/gege521/Qlik-Sense/blob/master/report.png)
  
