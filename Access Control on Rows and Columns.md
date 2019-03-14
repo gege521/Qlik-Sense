@@ -16,8 +16,7 @@ section application;
 ```
 
  ##### reduction:define which row to hide, omit:define which column to hide
- ##### note: here we only hide measurement, not dimensions(the report will have visual problems if we omit dimension, details 
- pls refer to qlik help website)
+note: here we only hide measurement, not dimensions(the report will have visual problems if we omit dimension, details pls refer to qlik help website)
  
  
  ##### step2: afer step1, the colunm will still stay in the report for those specific users, but the measurement all equals = 0,which means the first step works but not very user friendly, and sometimes biz don't want users aware of there are autority difference among them, so here is step2 adjustment on report level.
